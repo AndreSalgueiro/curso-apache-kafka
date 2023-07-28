@@ -22,7 +22,7 @@ public class StrConsumerListener {
         log.info("LOG ::: Receive message {}", message);
     }
 
-    //@KafkaListener(groupId = "group-2", topics = "str-topic", containerFactory = "strContainerFactory")//forma de setar os parametros do listener de forma manual
+    @KafkaListener(groupId = "group-2", topics = "str-topic", containerFactory = "validMessageContainerFactory")//forma de setar os parametros do listener de forma manual
     @StrConsumerCustomListener(groupId = "group-2")
     public void test(String message){
         log.info("TESTE ::: Receive message {}", message);
