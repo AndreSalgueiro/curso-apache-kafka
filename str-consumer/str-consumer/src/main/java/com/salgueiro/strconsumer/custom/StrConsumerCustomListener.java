@@ -21,4 +21,8 @@ public @interface StrConsumerCustomListener {
 
     @AliasFor(annotation = KafkaListener.class, attribute = "groupId")
     String groupId() default "groupId-1";
+
+    @AliasFor(annotation = KafkaListener.class, attribute = "errorHandler" )
+     String errorHandler() default "errorCustomHandler"; /*nome da classe que criei para customização de Exception com a primeira letra minuscula
+     (o Spring cria um bean dessa classe pois está anotada como @componet esse bean tem a primeira letra minuscula)*/
 }
