@@ -9,15 +9,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="str-consumer" />
         <module name="str-producer" />
+        <module name="payment-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">
+      <module name="payment-service" target="17" />
       <module name="str-consumer" target="17" />
       <module name="str-producer" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="payment-service" options="-parameters" />
       <module name="str-consumer" options="-parameters" />
       <module name="str-producer" options="-parameters" />
     </option>
