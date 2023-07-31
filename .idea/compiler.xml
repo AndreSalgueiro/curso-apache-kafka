@@ -10,9 +10,11 @@
         <module name="str-consumer" />
         <module name="str-producer" />
         <module name="payment-service" />
+        <module name="json-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">
+      <module name="json-consumer" target="17" />
       <module name="payment-service" target="17" />
       <module name="str-consumer" target="17" />
       <module name="str-producer" target="17" />
@@ -20,6 +22,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="json-consumer" options="-parameters" />
       <module name="payment-service" options="-parameters" />
       <module name="str-consumer" options="-parameters" />
       <module name="str-producer" options="-parameters" />
