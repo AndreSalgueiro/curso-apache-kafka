@@ -13,9 +13,9 @@
         <module name="json-consumer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17">
-      <module name="json-consumer" target="17" />
-      <module name="payment-service" target="17" />
+    <bytecodeTargetLevel>
+      <module name="json-consumer" target="${java.version}" />
+      <module name="payment-service" target="${java.version}" />
       <module name="str-consumer" target="17" />
       <module name="str-producer" target="17" />
     </bytecodeTargetLevel>

@@ -32,9 +32,31 @@ services:
     depends_on:
       - kafka
     ports:
-      - "19000:9000"
+      - "19000:9000" #mapeia a porta 19000 da minha maquina para aporta 9000 do container
     environment:
       KAFKA_BROKERCONNECT: kafka:29092
+
+  payment-service:
+    image: coordena/payment-service:1.0.1 #imagem griada com dockerfile
+    networks:
+      - broker-kafka
+    depends_on:
+      - kafka
+    ports:
+      - "8000:8000" #mapeia a porta 8100 da minha maquina para a porta 8100 do conteiner
+    environment:
+      KAFKA_HOST: kafka:29092
+
+  json-consumer:
+    image: coordena/json-consumer:1.0.1 #imagem griada com dockerfile
+    networks:
+      - broker-kafka
+    depends_on:
+      - kafka
+   # ports: nao precisa mapear porta pq esse servico nao recebe requisicao somente consome topicos no Kafka
+    #  - "8200:8200" #mapeia a porta 8100 da minha maquina para a porta 8100 do conteiner
+    environment:
+      KAFKA_HOST: kafka:29092
 
 networks:
   broker-kafka:
